@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arnaud Champierre de Villeneuve — Cybersécurité & Data</title>
+<meta name="description" content="Portfolio d'Arnaud Champierre de Villeneuve — Étudiant M2 Cybersécurité & Management, EFREI. Audit sécurité, CTI, automatisation, data.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          base: '#0a0a0c',
+          panel: '#0d0e12',
+          panel2: '#111318',
+          line: '#1f2125',
+          accent: '#00ff9c',
+          accentdim: '#0a7a52',
+        },
+        fontFamily: {
+          mono: ['"JetBrains Mono"', 'monospace'],
+          sans: ['"Inter"', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<!-- Lucide Icons (CDN) -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-base text-zinc-300 font-sans antialiased selection:bg-accent selection:text-base">
+
+<!-- Grille de fond -->
+<div class="bg-grid fixed inset-0 z-0 pointer-events-none"></div>
+<div class="fixed inset-0 z-0 pointer-events-none vignette"></div>
+
+<!-- ============ SIDEBAR (desktop) ============ -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full w-64 border-r border-line bg-panel/60 backdrop-blur-sm z-40">
+  <div class="px-6 py-7 border-b border-line">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 border border-accent/40 flex items-center justify-center font-mono text-accent text-sm tracking-widest">
+        ACDV
+      </div>
+      <div class="leading-tight">
+        <p class="font-mono text-[11px] text-zinc-500 tracking-[0.2em]">PORTFOLIO</p>
+        <p class="font-mono text-xs text-zinc-300 tracking-wide">v2.0</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-6 space-y-1 font-mono text-[13px] tracking-wide" id="sidebarNav">
+    <a href="#profil" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="terminal" class="w-4 h-4 shrink-0"></i>
+      <span>01 · PROFIL</span>
+    </a>
+    <a href="#experience" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i>
+      <span>02 · EXPÉRIENCE</span>
+    </a>
+    <a href="#formation" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i>
+      <span>03 · FORMATION</span>
+    </a>
+    <a href="#competences" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="shield" class="w-4 h-4 shrink-0"></i>
+      <span>04 · COMPÉTENCES</span>
+    </a>
+    <a href="#projets" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="folder-git-2" class="w-4 h-4 shrink-0"></i>
+      <span>05 · PROJETS</span>
+    </a>
+    <a href="#passions" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="radar" class="w-4 h-4 shrink-0"></i>
+      <span>06 · PASSIONS</span>
+    </a>
+    <a href="#contact" data-nav class="nav-link group flex items-center gap-3 px-3 py-2.5 text-zinc-500 hover:text-zinc-100 transition-colors">
+      <i data-lucide="satellite" class="w-4 h-4 shrink-0"></i>
+      <span>07 · CONTACT</span>
+    </a>
+  </nav>
+
+  <div class="px-6 py-5 border-t border-line space-y-4">
+    <div class="flex items-center gap-2 font-mono text-[11px] text-accent">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+      </span>
+      STATUS: DISPONIBLE
+    </div>
+    <div class="flex items-center gap-4 text-zinc-500">
+      <a href="https://www.linkedin.com/in/arnaud-champierre-de-villeneuve-844a13204/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors" aria-label="LinkedIn">
+        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/acdv5" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors" aria-label="GitHub">
+        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.469-2.38 1.236-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="mailto:arnauddvpro@gmail.com" class="hover:text-accent transition-colors" aria-label="Email">
+        <i data-lucide="mail" class="w-[18px] h-[18px]"></i>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ MOBILE HEADER ============ -->
+<header class="lg:hidden fixed top-0 inset-x-0 z-50 bg-panel/90 backdrop-blur-sm border-b border-line">
+  <div class="flex items-center justify-between px-5 py-4">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 border border-accent/40 flex items-center justify-center font-mono text-accent text-[10px] tracking-widest">
+        ACDV
+      </div>
+      <span class="font-mono text-xs text-zinc-400 tracking-widest">PORTFOLIO</span>
+    </div>
+    <button id="menuToggle" class="text-zinc-300 p-2" aria-label="Ouvrir le menu">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<nav id="mobileMenu" class="lg:hidden fixed inset-0 z-[60] bg-base/98 backdrop-blur-sm hidden flex-col">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-line">
+    <span class="font-mono text-xs text-zinc-400 tracking-widest">NAVIGATION</span>
+    <button id="menuClose" class="text-zinc-300 p-2" aria-label="Fermer le menu">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <div class="flex flex-col gap-1 px-5 py-8 font-mono text-base">
+    <a href="#profil" data-nav-mobile class="px-3 py-3 text-zinc-300 border-b border-line/60">01 · PROFIL</a>
+    <a href="#experience" data-nav-mobile class="px-3 py-3 text-zinc-300 border-b border-line/60">02 · EXPÉRIENCE</a>
+    <a href="#formation" data-nav-mobile class="px-3 py-3 text-zinc-300 border-b border-line/60">03 · FORMATION</a>
+    <a href="#competences" data-nav-mobile class="px-3 py-3 text-zinc-300 border-b border-line/60">04 · COMPÉTENCES</a>
+    <a href="#projets" data-nav-mobile class="px-3 py-3 text-zinc-300 border-b border-line/60">05 · PROJETS</a>
+    <a href="#passions" data-nav-mobile class="px-3 py-3 text-zinc-300 border-b border-line/60">06 · PASSIONS</a>
+    <a href="#contact" data-nav-mobile class="px-3 py-3 text-zinc-300">07 · CONTACT</a>
+  </div>
+  <div class="mt-auto flex items-center gap-6 px-8 py-8 border-t border-line text-zinc-500">
+    <a href="https://www.linkedin.com/in/arnaud-champierre-de-villeneuve-844a13204/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/acdv5" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.469-2.38 1.236-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="mailto:arnauddvpro@gmail.com" aria-label="Email"><i data-lucide="mail" class="w-5 h-5"></i></a>
+  </div>
+</nav>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="relative z-10 lg:pl-64">
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-base/10 to-base"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 py-20">
+      <div class="reveal flex items-center gap-3 mb-6 font-mono text-[11px] tracking-[0.25em] text-accent">
+        <span class="h-px w-8 bg-accent"></span>
+        PROFIL OPÉRATIONNEL // CYBERSÉCURITÉ &amp; DATA
+      </div>
+
+      <h1 class="reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-50 tracking-tight leading-[1.05] mb-5">
+        Arnaud Champierre<br>de Villeneuve
+      </h1>
+
+      <p class="reveal max-w-2xl text-zinc-400 leading-relaxed mb-10">
+        Étudiant en fin de Master 2 Cybersécurité &amp; Management. Je recherche un
+        <span class="text-zinc-100 font-medium">VIE</span> ou un
+        <span class="text-zinc-100 font-medium">CDI</span> pour industrialiser des processus
+        — sécurité, intelligence artificielle ou traitement de données (KPI).
+      </p>
+
+      <div class="reveal flex flex-wrap gap-2 mb-10 font-mono text-[11px] tracking-wide">
+        <span class="px-3 py-1.5 border border-accent/30 text-accent bg-accent/5">RECHERCHE VIE / CDI</span>
+        <span class="px-3 py-1.5 border border-line text-zinc-400">SÉCURITÉ</span>
+        <span class="px-3 py-1.5 border border-line text-zinc-400">INTELLIGENCE ARTIFICIELLE</span>
+        <span class="px-3 py-1.5 border border-line text-zinc-400">DATA &amp; KPI</span>
+      </div>
+
+      <div class="reveal flex flex-wrap items-center gap-4">
+        <a href="#contact" class="btn-primary inline-flex items-center gap-2 px-5 py-3 bg-accent text-base font-mono text-xs font-semibold tracking-widest">
+          <i data-lucide="send" class="w-4 h-4"></i> ME CONTACTER
+        </a>
+        <a href="assets/CV_Arnaud_Champierre_de_Villeneuve.pdf" download class="btn-outline inline-flex items-center gap-2 px-5 py-3 border border-line text-zinc-300 font-mono text-xs font-semibold tracking-widest hover:border-accent hover:text-accent transition-colors">
+          <i data-lucide="download" class="w-4 h-4"></i> CV (FR)
+        </a>
+        <a href="assets/CV_Arnaud_Champierre_de_Villeneuve_EN.pdf" download class="btn-outline inline-flex items-center gap-2 px-5 py-3 border border-line text-zinc-300 font-mono text-xs font-semibold tracking-widest hover:border-accent hover:text-accent transition-colors">
+          <i data-lucide="download" class="w-4 h-4"></i> CV (EN)
+        </a>
+        <a href="https://www.linkedin.com/in/arnaud-champierre-de-villeneuve-844a13204/" target="_blank" rel="noopener noreferrer" class="p-3 border border-line text-zinc-400 hover:border-accent hover:text-accent transition-colors" aria-label="LinkedIn">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/acdv5" target="_blank" rel="noopener noreferrer" class="p-3 border border-line text-zinc-400 hover:border-accent hover:text-accent transition-colors" aria-label="GitHub">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.469-2.38 1.236-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden lg:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-zinc-600 animate-bounce-slow">
+      <span class="font-mono text-[10px] tracking-[0.3em]">SCROLL</span>
+      <i data-lucide="chevron-down" class="w-4 h-4"></i>
+    </div>
+  </section>
+
+  <!-- ============ PROFIL ============ -->
+  <section id="profil" class="relative py-24 px-6 lg:px-12 border-t border-line">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="section-eyebrow">01 // PROFIL</p>
+        <h2 class="section-title">Synthèse</h2>
+      </div>
+
+      <div class="reveal space-y-5 text-zinc-400 leading-relaxed max-w-3xl">
+        <p>
+          Actuellement en fin de <span class="text-zinc-100">Master 2 Cybersécurité &amp; Management</span>
+          à l'EFREI, j'évolue depuis plus de deux ans au sein de l'équipe Audit de sécurité
+          informatique du <span class="text-zinc-100">Crédit Agricole CIB</span>, où je coordonne
+          des audits de pentest, analyse des vulnérabilités et automatise des tâches de veille
+          sur les menaces (CTI).
+        </p>
+        <p>
+          Mon parcours combine une expertise technique en cybersécurité (GRC, pentest, forensic)
+          avec une appétence forte pour la <span class="text-zinc-100">data</span> et
+          l'<span class="text-zinc-100">automatisation de processus</span> — Power BI, N8N, Make,
+          scripts Python/Bash, IA générative. Je recherche aujourd'hui un poste en VIE ou CDI pour
+          mettre cette double compétence au service de l'industrialisation de processus métier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="relative py-24 px-6 lg:px-12 border-t border-line">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="section-eyebrow">02 // EXPÉRIENCE</p>
+        <h2 class="section-title">Parcours professionnel</h2>
+      </div>
+
+      <div class="relative pl-8 space-y-12 timeline">
+        <!-- CACIB -->
+        <div class="reveal relative timeline-item">
+          <div class="tactical-card p-6 sm:p-8">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-100">Alternance — Audit de sécurité informatique</h3>
+                <p class="font-mono text-sm text-accent mt-1">Crédit Agricole CIB</p>
+              </div>
+              <span class="font-mono text-[11px] text-zinc-500 border border-line px-3 py-1 whitespace-nowrap">2024 — 2026</span>
+            </div>
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-zinc-400 mb-5">
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Coordination et préparation des audits de pentest</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Relecture de comptes rendus d'audits de pentest</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Analyse de vulnérabilités cyber</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Automatisation de tâches (Python &amp; Bash)</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Veille CTI automatisée (Ollama, FreshRSS, Docker)</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>KPI &amp; reporting Power BI, Power Query</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Gestion de projet</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Coordination internationale ASIE / USA / EUROPE</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+              <span class="tag">CTI</span><span class="tag">PENTEST</span><span class="tag">PYTHON</span><span class="tag">BASH</span><span class="tag">POWER BI</span><span class="tag">OLLAMA</span><span class="tag">DOCKER</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Natixis -->
+        <div class="reveal relative timeline-item">
+          <div class="tactical-card p-6 sm:p-8">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-100">Stage &amp; Alternance — Assistant Product Owner</h3>
+                <p class="font-mono text-sm text-accent mt-1">Natixis Wealth Management — Digital Assurance Vie</p>
+              </div>
+              <span class="font-mono text-[11px] text-zinc-500 border border-line px-3 py-1 whitespace-nowrap">2022 — 2023</span>
+            </div>
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-zinc-400 mb-5">
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Analyse d'anomalies, de bugs et de logs</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Gestion de projet informatique</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Apport de solutions techniques</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Tests informatiques</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Formalisation des besoins (maintenance évolutive/corrective)</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Suivi des mises à jour et correctifs</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Communication développeurs / métiers</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+              <span class="tag">PRODUCT OWNER</span><span class="tag">GESTION DE PROJET</span><span class="tag">TESTS</span><span class="tag">ASSURANCE VIE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- InWebo -->
+        <div class="reveal relative timeline-item">
+          <div class="tactical-card p-6 sm:p-8">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-100">Stage — Développeur</h3>
+                <p class="font-mono text-sm text-accent mt-1">InWebo Group</p>
+              </div>
+              <span class="font-mono text-[11px] text-zinc-500 border border-line px-3 py-1 whitespace-nowrap">Juillet 2021</span>
+            </div>
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-zinc-400 mb-5">
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Développement d'un programme d'enrichissement et de suppression de clients sur ZOHO CRM</li>
+              <li class="flex gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-accent shrink-0 mt-0.5"></i>Développement en C++</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+              <span class="tag">C++</span><span class="tag">ZOHO CRM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORMATION ============ -->
+  <section id="formation" class="relative py-24 px-6 lg:px-12 border-t border-line">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="section-eyebrow">03 // FORMATION</p>
+        <h2 class="section-title">Diplômes &amp; Certifications</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6 mb-6">
+        <div class="reveal tactical-card p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">DIPLÔMES</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="border-l border-line pl-4">
+              <p class="text-zinc-100 text-sm font-medium">Master 2 Cybersécurité &amp; Management</p>
+              <p class="text-xs text-zinc-500 font-mono mt-1">EFREI Villejuif</p>
+            </li>
+            <li class="border-l border-line pl-4">
+              <p class="text-zinc-100 text-sm font-medium">Bachelor Cybersécurité &amp; Réseau</p>
+              <p class="text-xs text-zinc-500 font-mono mt-1">ECE Paris</p>
+            </li>
+            <li class="border-l border-line pl-4">
+              <p class="text-zinc-100 text-sm font-medium">Baccalauréat Scientifique</p>
+              <p class="text-xs text-zinc-500 font-mono mt-1">Lycée Saint-Joseph, Reims</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal tactical-card p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="award" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">CERTIFICATIONS</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-center justify-between border-l border-line pl-4">
+              <p class="text-zinc-100 text-sm font-medium">CompTIA Security+</p>
+              <span class="tag">OBTENUE</span>
+            </li>
+            <li class="flex items-center justify-between border-l border-line pl-4">
+              <p class="text-zinc-100 text-sm font-medium">ISC2 CC</p>
+              <span class="tag tag-pending">PRÉPARATION</span>
+            </li>
+            <li class="flex items-center justify-between border-l border-line pl-4">
+              <p class="text-zinc-100 text-sm font-medium">Certification AMF</p>
+              <span class="tag tag-pending">PRÉPARATION</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal tactical-card p-6 sm:p-8">
+        <div class="flex items-center gap-3 mb-5">
+          <i data-lucide="book-open" class="w-5 h-5 text-accent"></i>
+          <h3 class="font-mono text-xs tracking-widest text-zinc-300">FORMATIONS COMPLÉMENTAIRES</h3>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-5">
+          <div class="flex gap-3">
+            <i data-lucide="link" class="w-4 h-4 text-accent shrink-0 mt-1"></i>
+            <div>
+              <p class="text-sm text-zinc-200">Blockchain</p>
+              <p class="text-xs text-zinc-500 mt-1">Smart contracts, Remix / VS Code — EFREI</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="search" class="w-4 h-4 text-accent shrink-0 mt-1"></i>
+            <div>
+              <p class="text-sm text-zinc-200">OSINT</p>
+              <p class="text-xs text-zinc-500 mt-1">Formation professionnelle — Orsys</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="shield-half" class="w-4 h-4 text-accent shrink-0 mt-1"></i>
+            <div>
+              <p class="text-sm text-zinc-200">PMT — Armée de Terre</p>
+              <p class="text-xs text-zinc-500 mt-1">Période militaire de terre, Suippes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPETENCES ============ -->
+  <section id="competences" class="relative py-24 px-6 lg:px-12 border-t border-line">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="section-eyebrow">04 // COMPÉTENCES</p>
+        <h2 class="section-title">Hard &amp; Soft Skills</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6 mb-10">
+        <div class="reveal tactical-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="scale" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">GOUVERNANCE, RISQUES &amp; CONFORMITÉ</h3>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div>
+              <p class="text-zinc-500 font-mono text-[10px] mb-2">RÉGLEMENTATION</p>
+              <div class="flex flex-wrap gap-2 font-mono text-[10px]"><span class="tag">DORA</span><span class="tag">RGPD</span></div>
+            </div>
+            <div>
+              <p class="text-zinc-500 font-mono text-[10px] mb-2">RÉFÉRENTIELS &amp; NORMES</p>
+              <div class="flex flex-wrap gap-2 font-mono text-[10px]"><span class="tag">NIST</span><span class="tag">ISO 27001</span><span class="tag">ISO 27005</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">D3FEND</span></div>
+            </div>
+            <div>
+              <p class="text-zinc-500 font-mono text-[10px] mb-2">MÉTHODOLOGIE</p>
+              <div class="flex flex-wrap gap-2 font-mono text-[10px]"><span class="tag">AUDIT IT</span><span class="tag">EBIOS RM</span><span class="tag">AGILE / SCRUM</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal tactical-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="shield-alert" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">CYBERSÉCURITÉ &amp; OUTILS</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+            <span class="tag">PENTEST</span><span class="tag">GESTION VULN.</span><span class="tag">CTI</span><span class="tag">OSINT</span>
+            <span class="tag">AXIOM</span><span class="tag">BURP SUITE</span><span class="tag">TENABLE</span><span class="tag">CHECKMARX</span>
+            <span class="tag">NMAP</span><span class="tag">KALI LINUX</span><span class="tag">VMWARE</span><span class="tag">PROXMOX</span><span class="tag">ELASTICSEARCH</span>
+          </div>
+        </div>
+
+        <div class="reveal tactical-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="database" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">DATA &amp; AUTOMATISATION</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+            <span class="tag">POWER BI</span><span class="tag">TABLEAU</span><span class="tag">PACK OFFICE</span><span class="tag">N8N</span>
+            <span class="tag">MAKE</span><span class="tag">IA CLAUDE</span><span class="tag">IA GEMINI</span><span class="tag">VS CODE</span>
+            <span class="tag">PYTHON</span><span class="tag">BASH</span><span class="tag">DOCKER</span><span class="tag">FRESHRSS</span><span class="tag">OLLAMA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="reveal tactical-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="users" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">SOFT SKILLS</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+            <span class="tag">TRAVAIL D'ÉQUIPE</span><span class="tag">COMMUNICATION</span><span class="tag">ADAPTATION ENV. BANCAIRE</span><span class="tag">ÉCOUTE</span>
+          </div>
+        </div>
+
+        <div class="reveal tactical-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <i data-lucide="languages" class="w-5 h-5 text-accent"></i>
+            <h3 class="font-mono text-xs tracking-widest text-zinc-300">LANGUES</h3>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between font-mono text-[11px] text-zinc-400 mb-1.5">
+                <span>FRANÇAIS</span><span class="text-accent">NATIF</span>
+              </div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between font-mono text-[11px] text-zinc-400 mb-1.5">
+                <span>ANGLAIS</span><span class="text-accent">PROFESSIONNEL — TOEIC B2</span>
+              </div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width:75%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJETS ============ -->
+  <section id="projets" class="relative py-24 px-6 lg:px-12 border-t border-line">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="section-eyebrow">05 // PROJETS</p>
+        <h2 class="section-title">Projets &amp; Extra-scolaire</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="reveal tactical-card p-6 sm:p-7">
+          <i data-lucide="crosshair" class="w-6 h-6 text-accent mb-4"></i>
+          <h3 class="text-zinc-100 font-medium mb-1">EFREI TIR — Responsable Sponsor</h3>
+          <p class="text-xs font-mono text-zinc-500 mb-3">Associatif</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Organisation d'événements de grande ampleur (airsoft, etc.), management d'équipe,
+            logistique, briefings de sécurité, prise de contact avec des entreprises.
+          </p>
+        </div>
+
+        <div class="reveal tactical-card p-6 sm:p-7">
+          <i data-lucide="target" class="w-6 h-6 text-accent mb-4"></i>
+          <h3 class="text-zinc-100 font-medium mb-1">ECE Shooting Club — VP Événementiel</h3>
+          <p class="text-xs font-mono text-zinc-500 mb-3">Associatif</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Gestion d'association, organisation d'événements de grande ampleur (airsoft, etc.),
+            management d'équipe, logistique, briefings de sécurité.
+          </p>
+        </div>
+
+        <div class="reveal tactical-card p-6 sm:p-7">
+          <i data-lucide="trending-up" class="w-6 h-6 text-accent mb-4"></i>
+          <h3 class="text-zinc-100 font-medium mb-1">Newsletter Investissement Automatisée</h3>
+          <p class="text-xs font-mono text-zinc-500 mb-3">Projet personnel</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Mise en place d'une newsletter boursière automatisée via Make.com. Analyse du marché
+            et d'articles boursiers via l'IA Gemini.
+          </p>
+          <div class="flex flex-wrap gap-2 font-mono text-[10px] mt-4"><span class="tag">MAKE.COM</span><span class="tag">GEMINI</span></div>
+        </div>
+
+        <div class="reveal tactical-card p-6 sm:p-7">
+          <i data-lucide="workflow" class="w-6 h-6 text-accent mb-4"></i>
+          <h3 class="text-zinc-100 font-medium mb-1">Automatisation Recherche d'Emploi</h3>
+          <p class="text-xs font-mono text-zinc-500 mb-3">Projet personnel</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Automatisation du processus de recherche d'emploi via N8N et l'IA Gemini.
+          </p>
+          <div class="flex flex-wrap gap-2 font-mono text-[10px] mt-4"><span class="tag">N8N</span><span class="tag">GEMINI</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PASSIONS ============ -->
+  <section id="passions" class="relative py-24 px-6 lg:px-12 border-t border-line">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="section-eyebrow">06 // PASSIONS</p>
+        <h2 class="section-title">Centres d'intérêt</h2>
+      </div>
+
+      <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="passion-card">
+          <i data-lucide="footprints" class="w-6 h-6 text-accent mb-3"></i>
+          <p class="text-xs font-mono text-zinc-400 tracking-wide">COURSE À PIED</p>
+          <p class="text-[10px] text-zinc-600 mt-1">Marathon / Semi</p>
+        </div>
+        <div class="passion-card">
+          <i data-lucide="pencil-line" class="w-6 h-6 text-accent mb-3"></i>
+          <p class="text-xs font-mono text-zinc-400 tracking-wide">DESSIN</p>
+        </div>
+        <div class="passion-card">
+          <i data-lucide="landmark" class="w-6 h-6 text-accent mb-3"></i>
+          <p class="text-xs font-mono text-zinc-400 tracking-wide">FINTECH</p>
+        </div>
+        <div class="passion-card">
+          <i data-lucide="satellite-dish" class="w-6 h-6 text-accent mb-3"></i>
+          <p class="text-xs font-mono text-zinc-400 tracking-wide">VEILLE TECH</p>
+        </div>
+        <div class="passion-card">
+          <i data-lucide="flame" class="w-6 h-6 text-accent mb-3"></i>
+          <p class="text-xs font-mono text-zinc-400 tracking-wide">BOXE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / FOOTER ============ -->
+  <footer id="contact" class="relative py-24 px-6 lg:px-12 border-t border-line overflow-hidden">
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="section-eyebrow justify-center">07 // CONTACT</p>
+      <h2 class="section-title mb-6">Entrons en contact</h2>
+      <p class="text-zinc-400 leading-relaxed max-w-xl mx-auto mb-10">
+        Ouvert à toute opportunité de VIE ou CDI autour de la cybersécurité, de l'IA ou de
+        l'automatisation de la donnée. N'hésitez pas à me contacter.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+        <a href="mailto:arnauddvpro@gmail.com" class="btn-primary inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-base font-mono text-xs font-semibold tracking-widest">
+          <i data-lucide="mail" class="w-4 h-4"></i> ARNAUDDVPRO@GMAIL.COM
+        </a>
+        <a href="https://www.linkedin.com/in/arnaud-champierre-de-villeneuve-844a13204/" target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center gap-2 px-6 py-3.5 border border-line text-zinc-300 font-mono text-xs font-semibold tracking-widest hover:border-accent hover:text-accent transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LINKEDIN
+        </a>
+        <a href="https://github.com/acdv5" target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center gap-2 px-6 py-3.5 border border-line text-zinc-300 font-mono text-xs font-semibold tracking-widest hover:border-accent hover:text-accent transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.469-2.38 1.236-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GITHUB
+        </a>
+      </div>
+
+      <div class="pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-600 font-mono text-[11px] tracking-wide">
+        <span>© 2026 ARNAUD CHAMPIERRE DE VILLENEUVE</span>
+        <span class="flex items-center gap-2">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent"></span>
+          </span>
+          BUILT WITH TAILWIND CSS
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
