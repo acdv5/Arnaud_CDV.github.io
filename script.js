@@ -1,7 +1,10 @@
 /* ==========================================================================
    Portfolio — Arnaud Champierre de Villeneuve
-   Vanilla JS : nav scroll-spy, menu mobile, reveal-on-scroll.
+   Vanilla JS : nav scroll-spy, menu mobile, reveal-on-scroll, newsletter.
    ========================================================================== */
+
+// URL du webhook "Custom webhook" du scénario Make.com (newsletter investissement)
+const NEWSLETTER_WEBHOOK_URL = 'https://hook.eu1.make.com/3t43y46y86bt47hdfhyku8kq5pga3ov4';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
@@ -9,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollSpy();
   initRevealOnScroll();
+  initNewsletterForm();
 });
 
 /* --------------------------------------------------------------------
@@ -84,4 +88,55 @@ function initRevealOnScroll() {
   );
 
   items.forEach((item) => observer.observe(item));
+}
+
+/* --------------------------------------------------------------------
+   Newsletter (Make.com webhook)
+   -------------------------------------------------------------------- */
+function initNewsletterForm() {
+  const form = document.getElementById('newsletterForm');
+  const msg = document.getElementById('newsletterMsg');
+  if (!form || !msg) return;
+
+  const setMessage = (text, tone) => {
+    msg.textContent = text;
+    msg.classList.remove('hidden', 'text-accent', 'text-red-400', 'text-zinc-500');
+    msg.classList.add(tone === 'success' ? 'text-accent' : tone === 'error' ? 'text-red-400' : 'text-zinc-500');
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (form.company.value.trim()) return; // honeypot rempli -> probable bot, on ignore silencieusement
+
+    const email = form.email.value.trim();
+    if (!email) return;
+
+    // Validation basique du format (le formulaire a novalidate -> pas de contrôle natif)
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMessage('Adresse email invalide.', 'error');
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    setMessage('Envoi en cours…', 'pending');
+
+    try {
+      const response = await fetch(NEWSLETTER_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'subscribe', email, source: 'portfolio', page: window.location.href }),
+      });
+
+      if (!response.ok) throw new Error(`Webhook a répondu ${response.status}`);
+
+      form.reset();
+      setMessage('Merci ! Votre inscription est confirmée.', 'success');
+    } catch (err) {
+      setMessage('Une erreur est survenue, réessayez plus tard.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 }
