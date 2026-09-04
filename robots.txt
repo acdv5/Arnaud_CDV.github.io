@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# AI / LLM crawlers explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://acdv5.github.io/Arnaud_CDV.github.io/sitemap.xml
+
+# AI-optimized resources:
+#   /llms.txt      - LLM-friendly natural-language summary
+#   /profile.json  - Schema.org structured data

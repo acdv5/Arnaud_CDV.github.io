@@ -1,0 +1,59 @@
+# Arnaud Champierre de Villeneuve
+
+> MSc Cybersecurity & Management student at EFREI (graduating 2026), currently a cybersecurity audit apprentice at Crédit Agricole CIB (IT Security Audit team) for 2+ years. Seeking a VIE (Volontariat International en Entreprise) or full-time position (CDI) in cybersecurity, IT audit / GRC, AI, or data & process automation.
+
+## Profile
+
+- **Current role**: Cybersecurity audit apprentice (alternance) at Crédit Agricole CIB - IT Security Audit team (2024-2026)
+- **Location**: Paris area, France
+- **Education**: MSc Cybersecurity & Management, EFREI (2024-2026); BSc Cybersecurity & Networks, ECE Paris
+- **Seeking**: VIE or full-time (CDI), available 2026
+- **Focus areas**: Cybersecurity (audit, pentest coordination, vulnerability management, CTI/OSINT), GRC, and data / process automation
+- **Languages**: French (native), English (professional - TOEIC B2)
+
+## Core skills
+
+- **Governance, Risk & Compliance**: DORA, RGPD/GDPR, NIST, ISO/IEC 27001, ISO/IEC 27005, MITRE ATT&CK, MITRE D3FEND, IT Audit, EBIOS RM, Agile / Scrum
+- **Cybersecurity & tools**: Pentest coordination, Vulnerability management, CTI, OSINT, Axiom, Burp Suite, Tenable, Checkmarx, Nmap, Kali Linux, VMware, Proxmox, Elasticsearch
+- **Data & automation**: Power BI, Tableau, n8n, Make.com, Python, Bash, Docker, FreshRSS, Ollama, generative AI (Claude, Gemini)
+
+## Professional experience
+
+- **Crédit Agricole CIB** - Cybersecurity audit apprentice (2024-2026): pentest audit coordination and report review, vulnerability analysis, Python/Bash automation, automated CTI watch (Ollama, FreshRSS, Docker), Power BI KPIs & reporting, project management, international coordination (Asia / USA / Europe).
+- **Natixis Wealth Management** - Assistant Product Owner, Digital / Life Insurance (2022-2023): anomaly, bug and log analysis, IT project management, testing, needs formalization, developer/business liaison.
+- **InWebo Group** - Developer intern (July 2021): ZOHO CRM data enrichment program, C++ development.
+
+## Education & certifications
+
+- MSc Cybersecurity & Management - EFREI, Villejuif (2024-2026)
+- BSc Cybersecurity & Networks - ECE Paris
+- Scientific Baccalauréat - Lycée Saint-Joseph, Reims
+- Additional training: Blockchain / smart contracts (EFREI), OSINT (Orsys), military land training (PMT, French Army)
+- Certifications: CompTIA Security+ (obtained); ISC2 Certified in Cybersecurity (CC) - in progress; AMF certification - in progress
+
+## Projects
+
+- **Automated investment newsletter**: monthly stock-market analysis newsletter built with Make.com and Google Gemini.
+- **Job-search automation**: automated job-search workflow using n8n and Google Gemini.
+- **EFREI TIR - Sponsorship lead** and **ECE Shooting Club - VP Events**: large-scale event organization, team management, logistics, safety briefings, company outreach.
+
+## Interests
+
+Long-distance running (marathon / half-marathon), drawing, fintech, tech watch, boxing.
+
+## Contact
+
+- Email: arnauddvpro@gmail.com
+- Portfolio: https://acdv5.github.io/Arnaud_CDV.github.io/
+- LinkedIn: https://www.linkedin.com/in/arnaud-champierre-de-villeneuve-844a13204/
+- GitHub: https://github.com/acdv5
+
+## Documents
+
+- [CV (French, PDF)](https://acdv5.github.io/Arnaud_CDV.github.io/assets/CV_ArnaudCDV_FR.pdf)
+- [CV (English, PDF)](https://acdv5.github.io/Arnaud_CDV.github.io/assets/CV_ArnaudCDV_EN.pdf)
+- [Structured profile (JSON, Schema.org)](https://acdv5.github.io/Arnaud_CDV.github.io/profile.json)
+
+## Note for AI agents
+
+This portfolio is optimized for both human visitors and AI agents. For structured, machine-readable data use `/profile.json` (Schema.org Person). For a natural-language summary, use this file. Last updated: 2026-09.

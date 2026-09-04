@@ -1,0 +1,153 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Arnaud Champierre de Villeneuve",
+  "givenName": "Arnaud",
+  "familyName": "Champierre de Villeneuve",
+  "jobTitle": "Cybersecurity Audit Apprentice",
+  "description": "MSc Cybersecurity & Management student at EFREI, currently a cybersecurity audit apprentice at Crédit Agricole CIB. Seeking a VIE or full-time (CDI) role in cybersecurity, IT audit / GRC, AI, or data & process automation.",
+  "email": "mailto:arnauddvpro@gmail.com",
+  "url": "https://acdv5.github.io/Arnaud_CDV.github.io/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/arnaud-champierre-de-villeneuve-844a13204/",
+    "https://github.com/acdv5"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Crédit Agricole CIB",
+    "department": "IT Security Audit",
+    "url": "https://www.ca-cib.com/"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "EFREI",
+      "url": "https://www.efrei.fr/",
+      "description": "MSc Cybersecurity & Management (2024-2026)"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "ECE Paris",
+      "url": "https://www.ece.fr/",
+      "description": "BSc Cybersecurity & Networks"
+    }
+  ],
+  "knowsLanguage": [
+    {
+      "@type": "Language",
+      "name": "French",
+      "alternateName": "Native"
+    },
+    {
+      "@type": "Language",
+      "name": "English",
+      "alternateName": "Professional (TOEIC B2)"
+    }
+  ],
+  "knowsAbout": [
+    "Cybersecurity",
+    "IT Audit",
+    "Risk Management",
+    "Vulnerability Management",
+    "Penetration Testing coordination",
+    "Cyber Threat Intelligence",
+    "OSINT",
+    "GRC",
+    "DORA",
+    "GDPR",
+    "NIST Cybersecurity Framework",
+    "ISO/IEC 27001",
+    "ISO/IEC 27005",
+    "MITRE ATT&CK",
+    "MITRE D3FEND",
+    "EBIOS RM",
+    "Agile Scrum",
+    "Power BI",
+    "Tableau",
+    "Python",
+    "Bash",
+    "Docker",
+    "n8n",
+    "Make.com",
+    "Ollama",
+    "Generative AI",
+    "Burp Suite",
+    "Tenable",
+    "Nmap",
+    "Kali Linux",
+    "Elasticsearch"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "CompTIA Security+",
+      "credentialCategory": "certification",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "CompTIA"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ISC2 Certified in Cybersecurity (CC)",
+      "credentialCategory": "certification",
+      "description": "In progress"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "AMF Certification",
+      "credentialCategory": "certification",
+      "description": "In progress"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "TOEIC",
+      "credentialCategory": "language certification",
+      "description": "English - B2 (professional)"
+    }
+  ],
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Cybersecurity Audit Apprentice",
+      "occupationalCategory": "15-1212",
+      "responsibilities": [
+        "Pentest audit coordination and report review",
+        "Vulnerability analysis",
+        "Python and Bash automation",
+        "Automated CTI watch (Ollama, FreshRSS, Docker)",
+        "Power BI KPIs and reporting",
+        "Project management and international coordination (Asia / USA / Europe)"
+      ],
+      "skills": "Pentest, Vulnerability Management, CTI, OSINT, Python, Bash, Docker, Power BI, MITRE ATT&CK, DORA, NIST, ISO 27001",
+      "occupationLocation": {
+        "@type": "Organization",
+        "name": "Crédit Agricole CIB"
+      }
+    }
+  ],
+  "seeks": {
+    "@type": "Demand",
+    "name": "VIE or full-time (CDI) position",
+    "description": "Seeking a VIE (Volontariat International en Entreprise) or full-time (CDI) role starting 2026 in Cyber Risk Analysis, Vulnerability Management, IT Audit / GRC, AI, or data & process automation. Open to international assignments."
+  },
+  "workExample": [
+    {
+      "@type": "CreativeWork",
+      "name": "Automated investment newsletter",
+      "description": "Monthly stock-market analysis newsletter automatically generated with Make.com and Google Gemini.",
+      "keywords": ["Make.com", "Google Gemini", "Automation", "Fintech"]
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Job-search automation",
+      "description": "Automated job-search workflow built with n8n and Google Gemini.",
+      "keywords": ["n8n", "Google Gemini", "Automation"]
+    }
+  ]
+}
